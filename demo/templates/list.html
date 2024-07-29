@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+<style>
+    .row1 {
+        color: red
+    }
+    .row2 {
+        color: blue
+    }
+</style>
+<body>
+    <h1>Article List</h1>
+    <h2>Author: {{ author }}  Article Number: {{ article_num }}</h2>
+    {% for article in article_list %}
+    <ul>
+        <li class = "{% cycle 'row1' 'row2' %}">{{ article }}</li>
+    </ul>
+    {% endfor %}
+
+    {% for key, value in info.items %}
+        {{key}}: {{value}}
+    {% endfor %}
+</body>
+</html>
